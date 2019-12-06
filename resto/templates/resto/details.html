@@ -1,0 +1,48 @@
+ <body align="center">
+
+        <div>
+        <h3>{{ rest1.name_text }}</h3>
+        <div>{{rest1.address_text}}</div>
+        </div>
+        <div>
+    {% if items %}
+    
+        <table  align="center" cellspacing="5" cellpadding="5">
+            <tr>
+            <td colspan="2" align="center"><h4>Menu</h4>
+            </td>
+            </tr>
+            {% for i in items %}
+                <tr>
+                <td>{{ i.dish_text }}</td>
+                <td>{{ i.price }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    
+    {% else %}
+        <p>No items are available.</p>
+    {% endif %}
+        </div>
+
+    <form action="/resto/{{rest1.id}}/createnewitems/" method="post">
+        <table align="center" cellspacing="5" cellpadding="5">
+
+        <tr>
+            <td colspan="2" align="center"><h4>Add Items in Menu</h4></td>
+        </tr>
+       <tr>
+                <td><label>Name</label></td>
+                <td><input type="text" name="name1"></td>
+        </tr>
+        <tr>
+                <td><label>Price</label></td>
+                <td><input type="number" step="0.01" min="0" max="999" name="add1"></td>
+        
+        </tr>
+
+       <tr><td colspan="2" align="center"><input type="submit" value="Add"></td></tr>
+</table>
+</form>
+
+</body>

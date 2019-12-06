@@ -1,0 +1,11 @@
+{% if rest_list %}
+    
+    <ul>
+    {% for r in rest_list %}
+        <li><a href="/api/{{ r.id }}/">{{ r.name_text }}</a></li>
+    {% endfor %}
+    </ul>
+    
+{% else %}
+    <p>No restaurant are available.</p>
+{% endif %}
