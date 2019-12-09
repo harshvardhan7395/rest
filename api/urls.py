@@ -10,5 +10,4 @@ urlpatterns = [
     path('createnew/', views.createnew, name='createnew'),
 
     path('<int:rest_id>/createnewitems/',views.createnewitems, name='createnewitems'),
-
 ]
