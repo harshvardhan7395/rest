@@ -53,7 +53,7 @@ def createnew(request):
         r = Rest(name_text=request.POST.get("name"), 
         address_text=request.POST.get("add"))
         r.save()
-        return HttpResponse("200 OK")
+        return HttpResponse("Added succussfully")
     elif request.method == 'GET':
         return HttpResponse("Unauthorised access to database")
 
@@ -64,6 +64,6 @@ def createnewitems(request,rest_id):
         i = Items(dish_text=request.POST.get("name1"), 
         price=request.POST.get("price"),rest=rest1)
         i.save()
-        return HttpResponse("200 OK")
+        return HttpResponse("Added succussfully")
     elif request.method == 'GET':
         return HttpResponse("Unauthorised access to database")
