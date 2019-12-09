@@ -74,3 +74,7 @@ def createnewitems(request, rest_id):
         return HttpResponse("Unauthorised access to database")
 
 
+def count(request):
+    return(Rest.objects.all().count())
+
+
