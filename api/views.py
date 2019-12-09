@@ -67,3 +67,8 @@ def createnewitems(request,rest_id):
         return HttpResponse("Added succussfully")
     elif request.method == 'GET':
         return HttpResponse("Unauthorised access to database")
+
+@csrf_exempt
+def countR(request):
+    
+    return HttpResponse(Rest.objects.all().count())
