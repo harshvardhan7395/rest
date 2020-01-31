@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 class Rest(models.Model):
@@ -26,4 +28,20 @@ class Items(models.Model):
     def __str__(self):
         return self.price
 
+
+class Order(models.Model):
+    rest = models.ForeignKey(Rest,on_delete=models.CASCADE)
+    
+
+
+class OrderItems(models.Model):
+    order_id = models.ForeignKey(Order,on_delete=models.CASCADE)
+    item_id = models.ForeignKey(Items,on_delete=models.CASCADE)
+    count = models.IntegerField(default=0)
+    
+
+
+    def __str__(self):
+        return self.count
+    
         
